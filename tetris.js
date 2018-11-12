@@ -28,8 +28,20 @@ function drawMatrix(matrix, offset) {
     });
 };
 
+let dropCounter = 0
+let dropInterval = 1000;
+
+let lastTime = 0;
 function update(time = 0) {
-    console.log(time)
+    const deltaTime = time - lastTime;
+    lastTime = time;
+    
+    dropCounter += deltaTime;
+    if (dropCounter > dropInterval){
+        player.pos.y++;
+        dropCounter = 0;
+    }
+
     draw();
     requestAnimationFrame(update);
 }
