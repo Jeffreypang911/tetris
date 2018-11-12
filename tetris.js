@@ -48,7 +48,13 @@ function update(time = 0) {
 
 const player = {
     pos: {x: 5, y: 5},
-    matrix: matrix
+    matrix: matrix,
+    moveleft: function() {
+        this.pos.x -= 1
+    },
+    moveright: function() {
+        this.pos.y += 1
+    }
 }
 
 update();
