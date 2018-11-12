@@ -1,8 +1,7 @@
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
 
-context.fillStyle = "#000";
-context.fillRect(0, 0, canvas.width, canvas.height)
+
 context.scale(20, 20);
 
 const matrix = [
@@ -12,6 +11,9 @@ const matrix = [
 ];
 
 function draw() {
+    context.fillStyle = "#000";
+    context.fillRect(0, 0, canvas.width, canvas.height)
+    
     drawMatrix(player.matrix, player.pos);
 };
 
@@ -26,7 +28,8 @@ function drawMatrix(matrix, offset) {
     });
 };
 
-function update() {
+function update(time = 0) {
+    console.log(time)
     draw();
     requestAnimationFrame(update);
 }
