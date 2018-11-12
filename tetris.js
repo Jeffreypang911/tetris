@@ -53,7 +53,7 @@ const player = {
         this.pos.x -= 1
     },
     moveright: function() {
-        this.pos.y += 1
+        this.pos.x += 1
     }
 }
 
