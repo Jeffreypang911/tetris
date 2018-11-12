@@ -59,7 +59,15 @@ const player = {
 
 document.onkeydown = keypress
 function keypress(e) {
-    console.log(e.key   )
+    console.log(e.key)
+    if(e.key==="ArrowLeft"){
+        player.moveleft
+        console.log(player.moveleft())
+    }
+    if(e.key==="ArrowRight"){
+        player.moveright
+        console.log(player.moveright())
+    }
 }
 
 update();
