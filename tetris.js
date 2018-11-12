@@ -57,4 +57,9 @@ const player = {
     }
 }
 
+document.onkeydown = keypress
+function keypress(e) {
+    console.log(e.key   )
+}
+
 update();
