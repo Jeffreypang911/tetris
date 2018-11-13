@@ -4,7 +4,7 @@ const context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-const matrix = [
+let matrix = [
     [0, 0, 0],
     [1, 1, 1],
     [0, 1, 0]
@@ -21,12 +21,14 @@ function rotateMatrix(matrixInput) {
     console.log(rowThree);
     newMatrix.push(rowOne, rowTwo, rowThree)
     console.log(newMatrix)
-    matrix1 = newMatrix
+    matrix = newMatrix
 }
 
 console.log(matrix, "before transformation")
 rotateMatrix(matrix)
 console.log(matrix, "after transformation")
+rotateMatrix(matrix)
+console.log(matrix, "11after transformation")
 
 
 
