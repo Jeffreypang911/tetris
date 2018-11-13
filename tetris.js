@@ -91,6 +91,9 @@ function keypress(e) {
         player.moveright
         console.log(player.moveright())
     }
+    if(e.key==="ArrowDown"){
+        rotateMatrix(matrix);
+    }
 }
 
 update();
