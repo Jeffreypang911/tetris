@@ -86,6 +86,9 @@ function keypress(e) {
     if(e.key==="ArrowUp"){
         rotateMatrix(matrix);
     }
+    if(e.key==="ArrowDown"){
+        player.pos.y++;
+    }
 }
 
 update();
