@@ -62,7 +62,7 @@ function update(time = 0) {
 }
 
 const player = {
-    pos: {x: 5, y: 5},
+    pos: {x: 4, y: 1},
     matrix: matrix,
     moveleft: function() {
         this.pos.x -= 1
