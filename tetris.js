@@ -11,17 +11,23 @@ const matrix = [
 ];
 
 
-function rotateMatrix(matrix) {
+function rotateMatrix(matrixInput) {
     newMatrix = []
-    rowOne = [matrix[0][2], matrix[1][2], matrix[2][2]]
-    rowTwo = []
-    rowThree = []
-    console.log(rowOne)
+    rowTwo = [matrixInput[0][1], matrixInput[1][1], matrixInput[2][1]]
+    rowOne = [matrixInput[0][2], matrixInput[1][2], matrixInput[2][2]]
+    rowThree = [matrixInput[0][0], matrixInput[1][0], matrixInput[2][0]]
+    console.log(rowOne);
+    console.log(rowTwo);
+    console.log(rowThree);
+    newMatrix.push(rowOne, rowTwo, rowThree)
+    console.log(newMatrix)
+    matrix1 = newMatrix
 }
 
-[0, 1, 0],
-[0, 1, 1],
-[0, 1, 0]
+console.log(matrix, "before transformation")
+rotateMatrix(matrix)
+console.log(matrix, "after transformation")
+
 
 
 
