@@ -10,6 +10,21 @@ const matrix = [
     [0, 1, 0]
 ];
 
+
+function rotateMatrix(matrix) {
+    newMatrix = []
+    rowOne = [matrix[0][2], matrix[1][2], matrix[2][2]]
+    rowTwo = []
+    rowThree = []
+    console.log(rowOne)
+}
+
+[0, 1, 0],
+[0, 1, 1],
+[0, 1, 0]
+
+
+
 function draw() {
     context.fillStyle = "#000";
     context.fillRect(0, 0, canvas.width, canvas.height)
