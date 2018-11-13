@@ -22,16 +22,8 @@ function rotateMatrix(matrixInput) {
     newMatrix.push(rowOne, rowTwo, rowThree)
     console.log(newMatrix)
     matrix = newMatrix
+    player.matrix = newMatrix
 }
-
-console.log(matrix, "before transformation")
-rotateMatrix(matrix)
-console.log(matrix, "after transformation")
-rotateMatrix(matrix)
-console.log(matrix, "11after transformation")
-
-
-
 
 function draw() {
     context.fillStyle = "#000";
@@ -44,7 +36,7 @@ function drawMatrix(matrix, offset) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                context.fillStyle = 'red'
+                context.fillStyle = 'white'
                 context.fillRect(x + offset.x, y + offset.y, 1, 1);
             };
         });
@@ -91,7 +83,7 @@ function keypress(e) {
         player.moveright
         console.log(player.moveright())
     }
-    if(e.key==="ArrowDown"){
+    if(e.key==="ArrowUp"){
         rotateMatrix(matrix);
     }
 }
