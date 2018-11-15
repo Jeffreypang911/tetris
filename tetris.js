@@ -89,6 +89,9 @@ function keypress(e) {
     if(e.key==="ArrowDown" && player.pos.y <= 22){
         player.pos.y++;
     }
+    if(e.key===" " && player.pos.y <= 22){
+        player.pos.y = 23;
+    }
 }
 
 update();
