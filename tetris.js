@@ -56,7 +56,7 @@ function update(time = 0) {
         player.pos.y++;
         dropCounter = 0;
     }
-
+    
     draw();
     requestAnimationFrame(update);
 }
