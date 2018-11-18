@@ -2,7 +2,7 @@ const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
 
 
-context.scale(16, 16);
+context.scale(20, 20);
 
 let matrix = [
     [0, 0, 0],
@@ -24,6 +24,13 @@ function collide(arena, player) {
     return false;
 }
 
+function createMatrix(w, h) {
+    const matrix = [];
+    while (h--) {
+        matrix.push(new Array(w).fill(0));
+    }
+    return matrix;
+}
 
 function rotateMatrix(matrixInput) {
     newMatrix = []
@@ -46,6 +53,16 @@ function draw() {
     drawMatrix(player.matrix, player.pos);
 };
 
+function merge(arena, player) {
+    player.matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                arena[y + player.pos.y][x + player.pos.x] = value;
+            }
+        })
+    })
+}
+
 function drawMatrix(matrix, offset) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -58,6 +75,11 @@ function drawMatrix(matrix, offset) {
 };
 function playerDrop() {
     player.pos.y++;
+    if (collide(arena,player)) {
+        player.pos.y--;
+        merge(arena, player);
+        player.pos.y = 0;
+    }
     dropCounter = 0;
 }
 let dropCounter = 0
@@ -77,6 +99,8 @@ function update(time = 0) {
     requestAnimationFrame(update);
 }
 
+const arena = createMatrix(12, 20)
+console.log(arena); console.table(arena)
 const player = {
     pos: {x: 4, y: 1},
     matrix: matrix,
