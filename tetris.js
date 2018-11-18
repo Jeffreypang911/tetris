@@ -42,7 +42,10 @@ function drawMatrix(matrix, offset) {
         });
     });
 };
-
+function playerDrop() {
+    player.pos.y++;
+    dropCounter = 0;
+}
 let dropCounter = 0
 let dropInterval = 1000;
 
@@ -53,8 +56,7 @@ function update(time = 0) {
     
     dropCounter += deltaTime;
     if (dropCounter > dropInterval && player.pos.y < 21){
-        player.pos.y++;
-        dropCounter = 0;
+        playerDrop()
     }
     
     draw();
@@ -87,7 +89,7 @@ function keypress(e) {
         rotateMatrix(matrix);
     }
     if(e.key==="ArrowDown" && player.pos.y < 22){
-        player.pos.y++;
+        playerDrop();
     }
     if(e.key===" " && player.pos.y < 22){
         player.pos.y = 22;
