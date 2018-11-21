@@ -1,0 +1,26 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tetris.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeffreypang911/tetris.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeffreypang911/tetris/issues"
+  },
+  "homepage": "https://github.com/Jeffreypang911/tetris#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
